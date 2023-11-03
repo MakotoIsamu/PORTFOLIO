@@ -1,3 +1,8 @@
+@font-face {
+    font-family: myFont;
+    src: url(Heading-Now-Variable.ttf);
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Gabarito&display=swap');
 
 *{
@@ -18,25 +23,14 @@ html, body{
 }
 
 #main{
+    background-color: black;
     width: 100%;
     color: white;
     position: relative;
     overflow: hidden;
 }
 
-#cursor{
-    height: 20px;
-    width: 20px;
-    background-color: white;
-    border-radius: 50px;
-    position: absolute;
-    z-index: 999;
-    mix-blend-mode: difference;
-    transition: all 0.1s;
-}
-
-#home{
-    background-color: black;
+.hero{
     height: 100vh;
     width: 100%;
     position: relative;
@@ -44,20 +38,31 @@ html, body{
 }
 
 nav{
-    padding: 40px 60px;
+    height: 100px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     overflow: hidden;
+    background-color: white;
+    color: black;
+    padding: 20px;
 }
 
-nav a{
-    color: white;
-    text-decoration: none;
+.leftnav{
+    display: flex;
+    align-items: center;
+    font-size: 3vw;
+    font-weight: 800;
 }
 
-nav p{
-    font-weight: 700;
-    font-size: 20px;
+.rightnav{
+    display: flex;
+    gap: 4vw;
+    align-items: center;
+}
+
+.rightnav img{
+    max-height: 100%;
 }
 
 #firstName{
@@ -70,7 +75,7 @@ nav p{
 #firstName h1{
     font-size: 10vw;
     font-weight: 800;
-    opacity: .6;
+    opacity: .7;
     line-height: 0.5;
 }
 
@@ -84,7 +89,7 @@ nav p{
 #lastName h1{
     font-size: 10vw;
     font-weight: 800;
-    opacity: .6; 
+    opacity: .7; 
     margin-left: 245px;
 }
 
@@ -103,12 +108,30 @@ nav p{
 }
 
 #home_footer {
+    height: 100px;
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: absolute;
+    padding: 0 20px;
     bottom: 0;
-    padding: 30px 70px;
+    background-color: rgb(253, 253, 253);
+    font-weight: 500;
+}
+
+#home_footer p{
+    font-size: 30px;
+}
+
+.social_media{
+    display: flex;
+    gap: 4vw;
+}
+
+.social_media img{
+    height: 50px;
+
 }
 
 .animated-border {
@@ -123,7 +146,7 @@ nav p{
     height: 2px; /* Adjust the thickness of the border as needed */
     bottom: -8px; /* Add space between the text and the border */
     left: 0;
-    background-color: #ffffff; /* Change this to your desired border color */
+    background-color: #000000; /* Change this to your desired border color */
     transform: scaleX(0); /* Initially, the border is hidden */
     transform-origin: left; /* Start the transformation from the left */
     transition: transform 0.3s ease;
@@ -134,19 +157,65 @@ nav p{
 }
 
 a{
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 
-#arrow_down{
-    padding: 10px 10px;
-    border-radius: 50px;
+.projects{
+    min-height: 100vh;
+    width: 100%;
     position: relative;
-    background-color: rgb(173, 173, 173);
-    margin-left: 5px;
-    color: black;
+    overflow: hidden;
 }
 
-#arrow_down i{
-    font-weight: 800;
+.elem{
+    height: 300px;
+    width: 85%;
+    border-bottom: 1px solid white;
+    font-size: 4vw;
+    display: flex;
+    align-items: center;
+    margin-left: 4%;
+    opacity: .7;
+    position: relative;
+    cursor: pointer;
+}
+
+.animated_heading{
+    white-space: nowrap;
+    margin-bottom: 50px;
+}
+
+.animated_heading h2{
+    display: inline-block;
+    margin-left: 100px;
+    font-size: 20vw;
+    font-weight: 999;
+    -webkit-text-stroke: 5px white;
+    color: transparent;
+    animation: scroll 20s infinite linear;
+}
+
+@keyframes scroll{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+.about{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-color: black;
+}
+
+.about_heading h2{
+    font-family: myFont;
+    font-size: 40vw;
+    white-space: nowrap;
+    font-stretch: 240%;
+    font-weight: 900;
 }
